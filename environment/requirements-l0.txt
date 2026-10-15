@@ -1,0 +1,7 @@
+# Layer L0 (harness, table printer, figure scripts): CPU only; versions of the environment that produced the paper.
+numpy==2.3.3
+pandas==2.3.3
+scipy==1.16.3
+matplotlib==3.10.7
+statsmodels==0.14.5
+pyyaml==6.0.3

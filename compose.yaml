@@ -1,0 +1,24 @@
+services:
+  lab:
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:${JUPYTER_PORT:-8892}:8888"
+    volumes:
+      - .:/workspace
+      - ../../CRSP/extracted_verified:/data/raw/crsp:ro
+      - ../GraphNeuralNetwork/fingraph-main:/opt/fingraph:ro
+      - statarb-cache:/cache
+    environment:
+      JUPYTER_TOKEN: ${JUPYTER_TOKEN:?Set JUPYTER_TOKEN in .env.}
+    working_dir: /workspace
+    command:
+      - sh
+      - -lc
+      - >-
+        jupyter lab --ip=0.0.0.0 --no-browser --allow-root
+        --ServerApp.token="$$JUPYTER_TOKEN"
+        --ServerApp.root_dir=/workspace
+
+volumes:
+  statarb-cache:

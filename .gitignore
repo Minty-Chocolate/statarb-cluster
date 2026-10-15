@@ -1,0 +1,43 @@
+# Secrets and local runtime configuration
+.env
+.env.*
+!.env.example
+
+# Python, R, Jupyter, and OS artifacts
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+
+# Local logs and temporary outputs
+*.log
+*.tmp
+.tmp/
+tmp/
+cache/
+/cache/
+
+# Vendor data and every reproducible, locally derived data product.
+# The notebooks retain executed output for GitHub rendering; users rebuild these
+# files from their licensed data when running the code locally.
+/data/raw/
+/data/derived/
+/data/**/*.pkl
+/data/**/*.pickle
+/data/**/*.npy
+/data/**/*.npz
+/data/**/*.parquet
+/data/**/*.csv
+/data/**/*.csv.gz
+/data/**/*.zarr/
+
+# Model-fit intermediates and Docker bind-mount outputs
+partitions/
+outputs/
+artifacts/
