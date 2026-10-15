@@ -11,21 +11,30 @@ market-neutral strategy in that context: the clustering rule can change both
 alpha and volatility, even when the return universe, signal horizon, and
 portfolio construction are held fixed.
 
+## Main results
+
 Replacing the KMeans benchmark with Graph-local produces the stronger result in
-this experiment and a more monotonic decile pattern. The figures below show the
-post-2010 cumulative log returns from the saved notebooks. KMeans deciles use
-Top-500 market-excess next-day returns; Graph-local is evaluated with its
+this experiment and a more monotonic decile pattern. The figures show post-2010
+cumulative log returns from the saved notebooks. KMeans deciles use Top-500
+market-excess next-day returns; Graph-local is evaluated with its
 market-excess payoff construction.
+
+### KMeans benchmark and deciles
 
 ![KMeans portfolio rules and market-excess deciles](assets/kmeans_deciles.png)
 
+### Graph-local strategy and deciles
+
 ![Graph-local portfolio rule and deciles](assets/graph_local_deciles.png)
 
-This does **not** make Graph-local a finished standalone strategy. A stronger
-setup needs better removal of common market risk and alpha-factor exposure, and
-a better residual-extraction model. Attention-based latent-factor models or
-asset-embedding methods are promising directions. That missing residual model
-is the main limitation of the present setup.
+## Main limitation and next steps
+
+This does **not** make Graph-local a finished standalone strategy. Further
+study should be directed to better removal of common risk (backward-looking)
+and alpha (forward-looking) exposure, and a better residual-extraction model.
+Attention-based factor models or asset-embedding methods for statarb are
+promising directions. That missing residual model is the main limitation of the
+present setup.
 
 ## Reproducible workflows
 
